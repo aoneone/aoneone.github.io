@@ -1,0 +1,14 @@
+User-agent: * 
+Allow: /
+Allow: /categories/
+Allow: /tags/
+Allow: /archives/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+Disallow: /img/
+Disallow: /lib/
+
+Sitemap: https://www.ricemice.cn/sitemap.xml
+Sitemap: https://www.ricemice.cn/baidusitemap.xml

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Excel之VB宏</title>
+    <url>/posts/6bdbac3e.html</url>
+    <content><![CDATA[<h1 id="这篇文章讲的主要是VB语法"><a href="#这篇文章讲的主要是VB语法" class="headerlink" title="这篇文章讲的主要是VB语法"></a>这篇文章讲的主要是VB语法</h1>]]></content>
+      <tags>
+        <tag>VBScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的工具箱</title>
+    <url>/posts/4e7ed366.html</url>
+    <content><![CDATA[<h1 id="工具集合-资源已转移至云盘"><a href="#工具集合-资源已转移至云盘" class="headerlink" title="工具集合(资源已转移至云盘)"></a>工具集合(资源已转移至云盘)</h1><ol>
+<li><p>Termux备份恢复 <a href="https://ricemice.lanzouj.com/iorxr02kpkjc">点此下载</a>(推荐)</p>
+</li>
+<li><p>Termux更换源(国内-清华)<a href="https://ricemice.lanzouj.com/iUeqR02kpkwf">点此下载</a></p>
+</li>
+<li><p>Lua实现unicode与utf8互转<a href="https://ricemice.lanzouj.com/iXKRt02kpcwh">点此下载</a></p>
+</li>
+<li><p>实用IP获取api<a href="https://ricemice.lanzouj.com/igzZI02kpkqj">点此下载</a></p>
+</li>
+<li><p>Git一键push<a href="https://ricemice.lanzouj.com/iWldr02kpktc">点此下载</a></p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Termux命令笔记</title>
+    <url>/posts/f253afe0.html</url>
+    <content><![CDATA[<h1 id="Termux命令"><a href="#Termux命令" class="headerlink" title="Termux命令"></a>Termux命令</h1><h2 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h2><h4 id="开机时运行的命令-这个需要安装Termux-Boot-是个安卓app"><a href="#开机时运行的命令-这个需要安装Termux-Boot-是个安卓app" class="headerlink" title="开机时运行的命令(这个需要安装Termux:Boot, 是个安卓app)"></a>开机时运行的命令(这个需要安装Termux:Boot, 是个安卓app)</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/data/data/com.termux/files/usr/bin/sh</span><br><span class="hljs-comment">#锁定后台不被清理(首次会有电源管理弹窗提醒)</span><br>termux-wake-lock<br><span class="hljs-comment">#打开ssh服务</span><br>sshd<br></code></pre></td></tr></table></figure>
+
+<h2 id="curl命令详解查看原文"><a href="#curl命令详解查看原文" class="headerlink" title="curl命令详解查看原文"></a>curl命令详解<a href="https://www.cnblogs.com/duhuo/p/5695256.html">查看原文</a></h2><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl [option] [url]<br></code></pre></td></tr></table></figure>
+<h4 id="常见参数"><a href="#常见参数" class="headerlink" title="常见参数"></a>常见参数</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">-A/--user-agent &lt;string&gt;          设置用户代理发送给服务器<br>-b/--cookie &lt;name=string/file&gt;    cookie字符串或文件读取位置<br>-c/--cookie-jar &lt;file&gt;             操作结束后把cookie写入到这个文件中<br>-C/--continue-at &lt;offset&gt;         断点续转<br>-D/--dump-header &lt;file&gt;           把header信息写入到该文件中<br>-e/--referer                      来源网址<br>-f/--fail                          连接失败时不显示http错误<br>-o/--output                       把输出写到该文件中<br>-O/--remote-name                  把输出写到该文件中，保留远程文件的文件名<br>-r/--range &lt;range&gt;                 检索来自HTTP/1.1或FTP服务器字节范围<br>-s/--silent                       静音模式。不输出任何东西<br>-T/--upload-file &lt;file&gt;           上传文件<br>-u/--user &lt;user[:password]&gt;       设置服务器的用户和密码<br>-w/--write-out [format]           什么输出完成后<br>-x/--proxy &lt;host[:port]&gt;          在给定的端口上使用HTTP代理<br><span class="hljs-meta prompt_">-#</span><span class="language-bash">/--progress-bar                 进度条显示当前的传送状态</span><br></code></pre></td></tr></table></figure>
+<h4 id="最直接的用法"><a href="#最直接的用法" class="headerlink" title="最直接的用法"></a>最直接的用法</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://www.baidu.com<br></code></pre></td></tr></table></figure>
+<h4 id="保存网页"><a href="#保存网页" class="headerlink" title="保存网页"></a>保存网页</h4><h6 id="使用输出重定向功能保存"><a href="#使用输出重定向功能保存" class="headerlink" title="使用输出重定向功能保存"></a>使用输出重定向功能保存</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://www.baidu.com &gt; /sdcard/baidu.html<br></code></pre></td></tr></table></figure>
+<h6 id="使用curl的内置option-o-小写-保存"><a href="#使用curl的内置option-o-小写-保存" class="headerlink" title="使用curl的内置option:-o(小写)保存"></a>使用curl的内置option:-o(小写)保存</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -o baidu.html http://www.baidu.com<br><span class="hljs-meta prompt_"># </span><span class="language-bash">执行后输出如下</span><br><span class="hljs-meta prompt_">% </span><span class="language-bash">Total  % Received  % Xferd  Average  Speed     Time       Time       Time  Current  Dload  Upload  Total  Spent    Left  Speed</span><br>  100        1024       0      1024       0    --:--:--   --:--:--   --:--:--   0     1024k          2048k<br></code></pre></td></tr></table></figure>
+<h6 id="使用curl的内置option-O-大写-保存网页中的文件-要注意这里后面的url要具体到某个文件，不然抓不下来"><a href="#使用curl的内置option-O-大写-保存网页中的文件-要注意这里后面的url要具体到某个文件，不然抓不下来" class="headerlink" title="使用curl的内置option:-O(大写)保存网页中的文件(要注意这里后面的url要具体到某个文件，不然抓不下来)"></a>使用curl的内置option:-O(大写)保存网页中的文件(要注意这里后面的url要具体到某个文件，不然抓不下来)</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -O http://www.baidu.com/hello.sh<br></code></pre></td></tr></table></figure>
+<p>测试网页返回值</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -o /dev/null -s -w %&#123;http_code&#125; www.baidu.com<br></code></pre></td></tr></table></figure>
+<h4 id="指定proxy服务器以及其端口"><a href="#指定proxy服务器以及其端口" class="headerlink" title="指定proxy服务器以及其端口"></a>指定proxy服务器以及其端口</h4><p>很多时候上网需要用到代理服务器(比如是使用代理服务器上网或者因为使用curl别人网站而被别人屏蔽IP地址的时候)，幸运的是curl通过使用内置option：-x来支持设置代理</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -x 192.168.100.100:1080 http://www.baidu.com<br></code></pre></td></tr></table></figure>
+<h4 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h4><p>有些网站是使用cookie来记录session信息。对于chrome这样的浏览器，可以轻易处理cookie信息，但在curl中只要增加相关参数也是可以很容易的处理cookie</p>
+<h6 id="保存http的response里面的cookie信息。内置option-c（小写）"><a href="#保存http的response里面的cookie信息。内置option-c（小写）" class="headerlink" title="保存http的response里面的cookie信息。内置option:-c（小写）"></a>保存http的response里面的cookie信息。内置option:-c（小写）</h6><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -c cookiec.txt  http://www.baidu.com<br></code></pre></td></tr></table></figure>
+<p>执行后cookie信息就被存到了cookiec.txt里面了</p>
+<h6 id="保存http的response里面的header信息。内置option-D"><a href="#保存http的response里面的header信息。内置option-D" class="headerlink" title="保存http的response里面的header信息。内置option: -D"></a>保存http的response里面的header信息。内置option: -D</h6><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -D cookied.txt http://www.baidu.com<br></code></pre></td></tr></table></figure>
+<p>执行后cookie信息就被存到了cookied.txt里面了</p>
+<p>注意：-c(小写)产生的cookie和-D里面的cookie是不一样的。</p>
+<h6 id="使用cookie"><a href="#使用cookie" class="headerlink" title="使用cookie"></a>使用cookie</h6><p>很多网站都是通过监视你的cookie信息来判断你是否按规矩访问他们的网站的，因此我们需要使用保存的cookie信息。内置option: -b</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -b cookiec.txt http://www.baidu.com<br></code></pre></td></tr></table></figure>
+<h4 id="模仿浏览器"><a href="#模仿浏览器" class="headerlink" title="模仿浏览器"></a>模仿浏览器</h4><p>有些网站需要使用特定的浏览器去访问他们，有些还需要使用某些特定的版本。curl内置option:-A可以让我们指定浏览器去访问网站</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -A <span class="hljs-string">&quot;Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.0)&quot;</span> http://www.baidu.com<br></code></pre></td></tr></table></figure>
+<p>这样服务器端就会认为是使用IE8.0去访问的</p>
+<h4 id="伪造referer（盗链）"><a href="#伪造referer（盗链）" class="headerlink" title="伪造referer（盗链）"></a>伪造referer（盗链）</h4><p>很多服务器会检查http访问的referer从而来控制访问。比如：你是先访问首页，然后再访问首页中的邮箱页面，这里访问邮箱的referer地址就是访问首页成功后的页面地址，如果服务器发现对邮箱页面访问的referer地址不是首页的地址，就断定那是个盗连了<br>curl中内置option：-e可以让我们设定referer</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -e <span class="hljs-string">&quot;www.baidu.com&quot;</span> http://mail.baidu.com<br><span class="hljs-comment"># 这样就会让服务器其以为你是从 www.baidu.com 点击某个链接过来的</span><br></code></pre></td></tr></table></figure>
+<h4 id="循环下载"><a href="#循环下载" class="headerlink" title="循环下载"></a>循环下载</h4><p>有时候下载图片可以能是前面的部分名称是一样的，就最后的尾椎名不一样</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -O http://www.baidu.com/dodo[1-5].JPG<br></code></pre></td></tr></table></figure>
+<p>这样就会把dodo1，dodo2，dodo3，dodo4，dodo5全部保存下来</p>
+<h4 id="下载重命名"><a href="#下载重命名" class="headerlink" title="下载重命名"></a>下载重命名</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -O http://www.baidu.com/&#123;hello,bb&#125;/dodo[1-5].JPG<br></code></pre></td></tr></table></figure>
+<p>由于下载的hello与bb中的文件名都是dodo1，dodo2，dodo3，dodo4，dodo5。因此第二次下载的会把第一次下载的覆盖，这样就需要对文件进行重命名。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -o <span class="hljs-comment">#1_#2.JPG http://www.baidu.com/&#123;hello,bb&#125;/dodo[1-5].JPG</span><br></code></pre></td></tr></table></figure>
+<p>这样在hello&#x2F;dodo1.JPG的文件下载下来就会变成hello_dodo1.JPG,其他文件依此类推，从而有效的避免了文件被覆盖</p>
+<h4 id="分块下载"><a href="#分块下载" class="headerlink" title="分块下载"></a>分块下载</h4><h6 id="有时候下载的东西会比较大，这个时候我们可以分段下载。使用内置option：-r"><a href="#有时候下载的东西会比较大，这个时候我们可以分段下载。使用内置option：-r" class="headerlink" title="有时候下载的东西会比较大，这个时候我们可以分段下载。使用内置option：-r"></a>有时候下载的东西会比较大，这个时候我们可以分段下载。使用内置option：-r</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -r 0-100 -o dodo1_part1.JPG http://www.baidu.com/dodo1.JPG<br>curl -r 100-200 -o dodo1_part2.JPG http://www.baidu.com/dodo1.JPG<br>curl -r 200- -o dodo1_part3.JPG http://www.baidu.com/dodo1.JPG<br>cat dodo1_part* &gt; dodo1.JPG<br></code></pre></td></tr></table></figure>
+<p>这样就可以查看dodo1.JPG的内容了</p>
+<h4 id="通过ftp下载文件"><a href="#通过ftp下载文件" class="headerlink" title="通过ftp下载文件"></a>通过ftp下载文件</h4><h6 id="curl可以通过ftp下载文件，curl提供两种从ftp中下载的语法"><a href="#curl可以通过ftp下载文件，curl提供两种从ftp中下载的语法" class="headerlink" title="curl可以通过ftp下载文件，curl提供两种从ftp中下载的语法"></a>curl可以通过ftp下载文件，curl提供两种从ftp中下载的语法</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -O -u 用户名:密码 ftp://www.baidu.com/dodo1.JPG<br>curl -O ftp://用户名:密码@www.baidu.com/dodo1.JPG<br></code></pre></td></tr></table></figure>
+<h6 id="显示下载进度条"><a href="#显示下载进度条" class="headerlink" title="显示下载进度条"></a>显示下载进度条</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -# -O http://www.baidu.com/dodo1.JPG<br></code></pre></td></tr></table></figure>
+<h6 id="不会显示下载进度信息"><a href="#不会显示下载进度信息" class="headerlink" title="不会显示下载进度信息"></a>不会显示下载进度信息</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -s -O http://www.baidu.com/dodo1.JPG<br></code></pre></td></tr></table></figure>
+<h6 id="断点续传"><a href="#断点续传" class="headerlink" title="断点续传"></a>断点续传</h6><p>在windows中，我们可以使用迅雷这样的软件进行断点续传。curl可以通过内置option:-C同样可以达到相同的效果<br>如果在下载dodo1.JPG的过程中突然掉线了，可以使用以下的方式续传</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -C -O http://www.baidu.com/dodo1.JPG<br></code></pre></td></tr></table></figure>
+<h6 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h6><p>curl不仅仅可以下载文件，还可以上传文件。通过内置option:-T来实现</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -T dodo1.JPG -u 用户名:密码 ftp://www.baidu.com/img/<br></code></pre></td></tr></table></figure>
+<p>这样就向ftp服务器上传了文件dodo1.JPG</p>
+<h6 id="显示抓取错误"><a href="#显示抓取错误" class="headerlink" title="显示抓取错误"></a>显示抓取错误</h6><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl -f http://www.baidu.com/error<br></code></pre></td></tr></table></figure>
+<h4 id="扩展阅读原文"><a href="#扩展阅读原文" class="headerlink" title="扩展阅读原文"></a>扩展<a href="http://www.linuxdiyf.com/linux/2800.html">阅读原文</a></h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">-a/--append                        上传文件时，附加到目标文件<br>--anyauth                            可以使用“任何”身份验证方法<br>--basic                                使用HTTP基本验证<br>-B/--use-ascii                      使用ASCII文本传输<br>-d/--data &lt;data&gt;                  HTTP POST方式传送数据<br>--data-ascii &lt;data&gt;            以ascii的方式post数据<br>--data-binary &lt;data&gt;          以二进制的方式post数据<br>--negotiate                          使用HTTP身份验证<br>--digest                        使用数字身份验证<br>--disable-eprt                  禁止使用EPRT或LPRT<br>--disable-epsv                  禁止使用EPSV<br>--egd-file &lt;file&gt;              为随机数据(SSL)设置EGD socket路径<br>--tcp-nodelay                  使用TCP_NODELAY选项<br>-E/--cert &lt;cert[:passwd]&gt;      客户端证书文件和密码 (SSL)<br>--cert-type &lt;type&gt;              证书文件类型 (DER/PEM/ENG) (SSL)<br>--key &lt;key&gt;                    私钥文件名 (SSL)<br>--key-type &lt;type&gt;              私钥文件类型 (DER/PEM/ENG) (SSL)<br>--pass  &lt;pass&gt;                  私钥密码 (SSL)<br>--engine &lt;eng&gt;                  加密引擎使用 (SSL). &quot;--engine list&quot; for list<br>--cacert &lt;file&gt;                CA证书 (SSL)<br>--capath &lt;directory&gt;            CA目   (made using c_rehash) to verify peer against (SSL)<br>--ciphers &lt;list&gt;                SSL密码<br>--compressed                    要求返回是压缩的形势 (using deflate or gzip)<br>--connect-timeout &lt;seconds&gt;    设置最大请求时间<br>--create-dirs                  建立本地目录的目录层次结构<br>--crlf                          上传是把LF转变成CRLF<br>--ftp-create-dirs              如果远程目录不存在，创建远程目录<br>--ftp-method [multicwd/nocwd/singlecwd]    控制CWD的使用<br>--ftp-pasv                      使用 PASV/EPSV 代替端口<br>--ftp-skip-pasv-ip              使用PASV的时候,忽略该IP地址<br>--ftp-ssl                      尝试用 SSL/TLS 来进行ftp数据传输<br>--ftp-ssl-reqd                  要求用 SSL/TLS 来进行ftp数据传输<br>-F/--form &lt;name=content&gt;        模拟http表单提交数据<br>-form-string &lt;name=string&gt;      模拟http表单提交数据<br>-g/--globoff                    禁用网址序列和范围使用&#123;&#125;和[]<br>-G/--get                        以get的方式来发送数据<br>-h/--help                      帮助<br>-H/--header &lt;line&gt;              自定义头信息传递给服务器<br>--ignore-content-length        忽略的HTTP头信息的长度<br>-i/--include                    输出时包括protocol头信息<br>-I/--head                      只显示文档信息<br>-j/--junk-session-cookies      读取文件时忽略session cookie<br>--interface &lt;interface&gt;        使用指定网络接口/地址<br>--krb4 &lt;level&gt;                  使用指定安全级别的krb4<br>-k/--insecure                  允许不使用证书到SSL站点<br>-K/--config                    指定的配置文件读取<br>-l/--list-only                  列出ftp目录下的文件名称<br>--limit-rate &lt;rate&gt;            设置传输速度<br>--local-port&lt;NUM&gt;              强制使用本地端口号<br>-m/--max-time &lt;seconds&gt;        设置最大传输时间<br>--max-redirs &lt;num&gt;              设置最大读取的目录数<br>--max-filesize &lt;bytes&gt;          设置最大下载的文件总量<br>-M/--manual                    显示全手动<br>-n/--netrc                      从netrc文件中读取用户名和密码<br>--netrc-optional                使用 .netrc 或者 URL来覆盖-n<br>--ntlm                          使用 HTTP NTLM 身份验证<br>-N/--no-buffer                  禁用缓冲输出<br>-p/--proxytunnel                使用HTTP代理<br>--proxy-anyauth                选择任一代理身份验证方法<br>--proxy-basic                  在代理上使用基本身份验证<br>--proxy-digest                  在代理上使用数字身份验证<br>--proxy-ntlm                    在代理上使用ntlm身份验证<br>-P/--ftp-port &lt;address&gt;        使用端口地址，而不是使用PASV<br>-Q/--quote &lt;cmd&gt;                文件传输前，发送命令到服务器<br>--range-file                    读取（SSL）的随机文件<br>-R/--remote-time                在本地生成文件时，保留远程文件时间<br>--retry &lt;num&gt;                  传输出现问题时，重试的次数<br>--retry-delay &lt;seconds&gt;        传输出现问题时，设置重试间隔时间<br>--retry-max-time &lt;seconds&gt;      传输出现问题时，设置最大重试时间<br>-S/--show-error                显示错误<br>--socks4 &lt;host[:port]&gt;          用socks4代理给定主机和端口<br>--socks5 &lt;host[:port]&gt;          用socks5代理给定主机和端口<br>-t/--telnet-option &lt;OPT=val&gt;    Telnet选项设置<br>--trace &lt;file&gt;                  对指定文件进行debug<br>--trace-ascii &lt;file&gt;            Like --跟踪但没有hex输出<br>--trace-time                    跟踪/详细输出时，添加时间戳<br>--url &lt;URL&gt;                    Spet URL to work with<br>-U/--proxy-user &lt;user[:password]&gt;  设置代理用户名和密码<br>-V/--version                    显示版本信息<br>-X/--request &lt;command&gt;          指定什么命令<br>-y/--speed-time                放弃限速所要的时间。默认为30<br>-Y/--speed-limit                停止传输速度的限制，速度时间&#x27;秒<br>-z/--time-cond                  传送时间设置<br>-0/--http1.0                    使用HTTP 1.0<br>-1/--tlsv1                      使用TLSv1（SSL）<br>-2/--sslv2                      使用SSLv2的（SSL）<br>-3/--sslv3                      使用的SSLv3（SSL）<br>--3p-quote                      like -Q for the source URL for 3rd party transfer<br>--3p-url                        使用url，进行第三方传送<br>--3p-user                      使用用户名和密码，进行第三方传送<br>-4/--ipv4                      使用IP4<br>-6/--ipv6                      使用IP6<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+<h2 id="获取当前目录"><a href="#获取当前目录" class="headerlink" title="获取当前目录"></a>获取当前目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> `<span class="hljs-built_in">dirname</span> <span class="hljs-variable">$0</span>`<br></code></pre></td></tr></table></figure>
+<h2 id="shell历史记录命令-安卓模拟终端部分参数不可用"><a href="#shell历史记录命令-安卓模拟终端部分参数不可用" class="headerlink" title="shell历史记录命令(安卓模拟终端部分参数不可用)"></a>shell历史记录命令(安卓模拟终端部分参数不可用)</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">语法：<br><span class="hljs-built_in">history</span> [option] [parameter]<br>[option]：<br>  -N: 显示历史记录中最近的N个记录；<br>  -c：清空当前历史命令；<br>  -a：将历史命令缓冲区中命令写入历史命令文件中；<br>  -r：将历史命令文件中的命令读入当前历史命令缓冲区；<br>  -w：将当前历史命令缓冲区命令写入历史命令文件中;<br>  -d&lt;offset&gt;：删除历史记录中第offset个命令<br>  -n&lt;filename&gt;：读取指定文件<br><br>  ！[number]        // 执行第n条命令<br>  !!               // 执行上一条命令<br>[parameter]:<br>  n：打印最近的n条历史命令。<br></code></pre></td></tr></table></figure>
+<h2 id="shell删除指定目录下特定文件"><a href="#shell删除指定目录下特定文件" class="headerlink" title="shell删除指定目录下特定文件"></a>shell删除指定目录下特定文件</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">DIR=/folder<br>EXT=*.txt    <span class="hljs-comment"># 可以是别的文件类型</span><br> <br><span class="hljs-keyword">if</span> [ <span class="hljs-built_in">test</span> -d <span class="hljs-variable">$DIR</span> ]; <span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">cd</span> <span class="hljs-variable">$DIR</span><br>    <span class="hljs-built_in">rm</span> -f <span class="hljs-variable">$EXT</span><br>    <span class="hljs-built_in">echo</span> 删除 <span class="hljs-variable">$DIR</span>/<span class="hljs-variable">$EXT</span> 成功<br><span class="hljs-keyword">else</span>  <br>    <span class="hljs-built_in">echo</span> <span class="hljs-variable">$DIR</span> 路径不存在或不是目录<br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="Shell开启定时任务"><a href="#Shell开启定时任务" class="headerlink" title="Shell开启定时任务"></a>Shell开启定时任务</h2><h3 id="1-首先需要关闭省点策略-无限制"><a href="#1-首先需要关闭省点策略-无限制" class="headerlink" title="1. 首先需要关闭省点策略(无限制)"></a>1. 首先需要关闭省点策略(无限制)</h3><h3 id="2-运行以下命令防止设备休眠进程停止"><a href="#2-运行以下命令防止设备休眠进程停止" class="headerlink" title="2. 运行以下命令防止设备休眠进程停止"></a>2. 运行以下命令防止设备休眠进程停止</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs Termux">termux-wake-lock<br></code></pre></td></tr></table></figure>
+<h3 id="3-开启crontab-命令如下"><a href="#3-开启crontab-命令如下" class="headerlink" title="3. 开启crontab, 命令如下"></a>3. 开启crontab, 命令如下</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs Termux">crond<br></code></pre></td></tr></table></figure>
+<h3 id="4-添加-编辑-定时任务-命令如下"><a href="#4-添加-编辑-定时任务-命令如下" class="headerlink" title="4. 添加(编辑)定时任务, 命令如下"></a>4. 添加(编辑)定时任务, 命令如下</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs Termux">crontab -e<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs Log">选项<br>-e 编辑用户的crontab<br>-l 列表用户的crontab<br>-r 删除用户的crontab<br>-i 提示符在删除之前<br>-t &lt;file&gt; 测试crontab文件语法<br>-v 打印版本和ext<br>-x &lt;mask&gt;启用调试<br>默认操作是替换的, 这些内容可以通过命令 &#x27;crontab&#x27;获得<br></code></pre></td></tr></table></figure>
+<h3 id="这里举个栗子"><a href="#这里举个栗子" class="headerlink" title="这里举个栗子"></a>这里举个栗子</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs Script">30 9 * * * ls . &gt; /sdcard/filelists.txt<br>//分 时 天 月 年 命令内容<br></code></pre></td></tr></table></figure>
+<h3 id="定时说明"><a href="#定时说明" class="headerlink" title="定时说明"></a>定时说明<br /></h3><div align="center">
+<img src="https://cdn.jsdelivr.net/gh/aoneone/images@master/Termux定时任务说明附件.png" width="300", height="150" />
+</div>
+
+
+
+<h2 id="安装nodejs长期支持版"><a href="#安装nodejs长期支持版" class="headerlink" title="安装nodejs长期支持版"></a>安装nodejs长期支持版</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">pkg install nodejs-lts<br></code></pre></td></tr></table></figure>
+<p>##卸载nodejs长期支持版</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">pkg unstall nodejs-lts<br></code></pre></td></tr></table></figure>
+<p>##npm 使用淘宝镜像</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm config <span class="hljs-built_in">set</span> registry http://registry.npm.taobao.org<br></code></pre></td></tr></table></figure>
+<p>##安装hexo</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+<p>##创建博客站点</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">hexo init blog<br></code></pre></td></tr></table></figure>
+<p>##进去博客目录</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> blog<br></code></pre></td></tr></table></figure>
+<p>##更换国内源(清华源)</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">sed -i <span class="hljs-string">&#x27;s@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main@&#x27;</span> <span class="hljs-variable">$PREFIX</span>/etc/apt/sources.list<br>sed -i <span class="hljs-string">&#x27;s@^\(deb.*games stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable@&#x27;</span> <span class="hljs-variable">$PREFIX</span>/etc/apt/sources.list.d/game.list<br>sed -i <span class="hljs-string">&#x27;s@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable@&#x27;</span> <span class="hljs-variable">$PREFIX</span>/etc/apt/sources.list.d/science.list<br></code></pre></td></tr></table></figure>
+
+<h2 id="hexo命令"><a href="#hexo命令" class="headerlink" title="hexo命令"></a>hexo命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">hexo new <span class="hljs-string">&quot;postName&quot;</span> <span class="hljs-comment">#新建文章</span><br>hexo new page <span class="hljs-string">&quot;pageName&quot;</span> <span class="hljs-comment">#新建页面</span><br>hexo generate <span class="hljs-comment">#生成静态页面至public目录</span><br>hexo server <span class="hljs-comment">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span><br>hexo -p 80 <span class="hljs-comment">#指定80端口</span><br>hexo deploy <span class="hljs-comment">#部署到GitHub</span><br>hexo <span class="hljs-built_in">help</span>  <span class="hljs-comment"># 查看帮助</span><br>hexo version 或 hexo v  <span class="hljs-comment">#查看Hexo的版本</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">##缩写：</span><br>hexo n → hexo new<br>hexo g → hexo generate<br>hexo s → hexo server<br>hexo d → hexo deploy<br>hexo cl → hexo clean<br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">##组合命令：</span><br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s <span class="hljs-comment">#本地一条龙服务</span><br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d <span class="hljs-comment">#云端一条龙</span><br>hexo s -g <span class="hljs-comment">#生成并本地预览</span><br>hexo d -g <span class="hljs-comment">#生成并上传</span><br></code></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Termux</tag>
+        <tag>Hexo</tag>
+        <tag>Shell</tag>
+        <tag>笔记</tag>
+        <tag>Ayer</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+</search>
